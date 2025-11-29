@@ -4,60 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Hi</title>
-    <style>
-        @font-face {
-            font-family: 'GAU_cube_R';
-            src: url('fonts/GAU_cube_R.TTF') format('truetype');
-        }
-
-        body {
-            color: #ff4f00;
-            background-color: #1c1c25;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'GAU_cube_R', sans-serif;
-            border: 2px solid #ff4f00;
-            box-sizing: border-box;
-        }
-
-        @keyframes ellipsis {
-            0% {
-                content: '';
-            }
-
-            25% {
-                content: '.';
-            }
-
-            50% {
-                content: '..';
-            }
-
-            75% {
-                content: '...';
-            }
-        }
-
-        p::after {
-            content: '';
-            animation: ellipsis 1s infinite;
-            display: inline-block;
-            width: 1em;
-            text-align: left;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div id="ascii-art" style="position: absolute; top: 0; width: 100%; text-align: center;"></div>
     <div style="text-align: center;">
         <h1>Hi</h1>
         <p>please, take a look at this</p>
         <a style="color: #ff4f00;" href="https://dimas.my">.</a>
     </div>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
