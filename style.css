@@ -1,87 +1,149 @@
- @font-face {
-     font-family: 'GAU_cube_R';
-     src: url('fonts/GAU_cube_R.TTF') format('truetype');
- }
+@font-face {
+    font-family: 'GAU_cube_R';
+    src: url('fonts/GAU_cube_R.TTF') format('truetype');
+}
 
- body {
-     color: #ff4f00;
-     background-color: #1c1c25;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     height: 100vh;
-     margin: 0;
-     font-family: 'GAU_cube_R', sans-serif;
-     border: 2px solid #ff4f00;
-     box-sizing: border-box;
- }
+/* O BODY age como o "palco" */
+body {
+    background-color: #122222;
+    /* Fundo da tela inteira */
+    color: #b44f00;
 
- @keyframes ellipsis {
-     0% {
-         content: '';
-     }
+    /* Centralização Flexbox (mantém o que você já tinha) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza horizontalmente */
+    justify-content: center;
+    /* Centraliza verticalmente */
+    height: 100vh;
+    margin: 0;
+    font-family: 'GAU_cube_R', sans-serif;
+}
 
-     25% {
-         content: ':';
-     }
+@keyframes ellipsis {
+    0% {
+        content: '';
+    }
 
-     50% {
-         content: '';
-     }
+    25% {
+        content: ':';
+    }
 
-     75% {
-         content: ':';
-     }
- }
+    50% {
+        content: '';
+    }
 
- p::after {
-     content: '';
-     animation: ellipsis 1s infinite;
-     display: inline-block;
-     width: 1em;
+    75% {
+        content: ':';
+    }
+}
 
-     < !DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Hi</title><style>@font-face {
-         font-family: 'GAU_cube_R';
-         src: url('fonts/GAU_cube_R.TTF') format('truetype');
-     }
+p::after {
+    content: '';
+    animation: ellipsis 1s infinite;
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+}
 
-     body {
-         color: #ff4f00;
-         background-color: #1c1c25;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: center;
-         height: 100vh;
-         margin: 0;
-         font-family: 'GAU_cube_R', sans-serif;
-         border: 2px solid #ff4f00;
-         box-sizing: border-box;
-     }
+/* Estado normal do span (invisível para o layout não quebrar) */
+.-char {
+    display: inline;
+    /* Garante que não quebre linha */
+}
 
-     @keyframes ellipsis {
-         0% {
-             content: '';
-         }
+/* O estado "piscando" */
+.active-blink {
+    opacity: 0;
+    /* Faz sumir momentaneamente (efeito glitch) */
+    transition: opacity 0.1s;
+    /* Rapidez do piscar */
+}
 
-         25% {
-             content: ':';
-         }
+/* --- Base do Caractere --- */
+.ascii-char {
+    /* NECESSÁRIO para que o transform funcione sem quebrar o fluxo do texto */
+    display: inline-block;
+    /* Suaviza o movimento de ida e volta */
+    transition: transform 0.05s ease-in-out, opacity 0.1s;
+    /* Garante que fiquem alinhados na base da linha */
+    vertical-align: baseline;
+}
 
-         50% {
-             content: '';
-         }
+/* --- Efeito 1: Piscar (O que você já tinha) --- */
+.active-blink {
+    color: #b44f00;
+    /* Cor neon opcional */
+    opacity: 0.2;
+    /* Fica quase invisível */
+}
 
-         75% {
-             content: ':';
-         }
-     }
+/* --- Efeito 2: Movimento (Novos) --- */
+/* Define um valor padrão caso o JS falhe, mas o JS vai sobrescrever isso */
+:root {
+    --shift-amount: 2px;
+}
 
-     p::after {
-         content: '';
-         animation: ellipsis 1s infinite;
-         display: inline-block;
-         width: 1em;
-         text-align: left;
-     }
+.glitch-left {
+    /* Move para a esquerda usando o valor negativo da variável */
+    transform: translateX(calc(var(--shift-amount) * -1));
+    /* Opcional: muda a cor ligeiramente quando move */
+    color: #b44f00
+}
+
+.glitch-right {
+    /* Move para a direita */
+    transform: translateX(var(--shift-amount));
+    /* Opcional: muda a cor ligeiramente quando move */
+    color: #b44f00
+}
+
+.nav-button {
+    position: fixed;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #b44f00;
+    display: block;
+    cursor: help;
+    box-sizing: border-box;
+}
+
+.nav-button.outline {
+    background-color: transparent;
+    border: 2px solid #b44f00;
+}
+
+#ascii-art {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: visiblePainted;
+    z-index: 1;
+
+}
+
+#ascii-art2 {
+    font-size: 5px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: visiblePainted;
+    z-index: 1;
+}
+
+.about-text {
+    width: 100%;
+    max-width: 600px;
+    /* Limita a largura para leitura ficar confortável */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    border: 2px solid #b44f00;
+}
