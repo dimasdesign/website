@@ -119,10 +119,16 @@ body {
 
 #ascii-art {
     font-size: 10px;
-    position: absolute;
+    /* position: absolute;
     top: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
+
+    position: relative; /* Mantém no fluxo */
+    margin-bottom: 40px; /* Empurra o conteúdo de baixo */
+    white-space: pre; /* Garante que a arte não quebre linhas indevidamente */
+    text-align: center;
+
     pointer-events: visiblePainted;
     z-index: 1;
 
@@ -130,10 +136,16 @@ body {
 
 #ascii-art2 {
     font-size: 5px;
-    position: absolute;
+    /* position: absolute;
     top: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
+
+    position: relative; /* Mantém no fluxo */
+    margin-bottom: 40px; /* Empurra o conteúdo de baixo */
+    white-space: pre; /* Garante que a arte não quebre linhas indevidamente */
+    text-align: center;
+
     pointer-events: visiblePainted;
     z-index: 1;
 }
