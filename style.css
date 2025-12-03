@@ -3,7 +3,6 @@
     src: url('fonts/GAU_cube_R.TTF') format('truetype');
 }
 
-/* O BODY age como o "palco" */
 body {
     background-color: #122222;
     /* Fundo da tela inteira */
@@ -115,14 +114,27 @@ body {
 .nav-button.outline {
     background-color: transparent;
     border: 2px solid #b44f00;
+    z-index: 2;
 }
 
 #ascii-art {
     font-size: 10px;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    line-height: 10px;
+
+    position: relative; /* Mantém no fluxo */
+    margin-bottom: 40px; /* Empurra o conteúdo de baixo */
+    white-space: pre; /* Garante que a arte não quebre linhas indevidamente */
+    text-align: center;
+
+    min-height: 300px; /* A ASCII art 1 tem umas 22 linhas. 22*10px = 220px. Mas testando, só 300 funcionou bem */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    white-space: pre; /* Mantém os espaços em branco */
+    text-align: center;
+
     pointer-events: visiblePainted;
     z-index: 1;
 
@@ -130,10 +142,19 @@ body {
 
 #ascii-art2 {
     font-size: 5px;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    line-height: 5px;
+
+    position: relative;
+    margin-bottom: 40px;
+    white-space: pre;
+    text-align: center;
+
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     pointer-events: visiblePainted;
     z-index: 1;
 }
