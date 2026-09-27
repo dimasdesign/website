@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D!mas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../Images/timesrunin.png'">
+</head>
+<body>
+    <p id="title">TEMPUS EDAX RERUM</p>
+    <p id="demo"></p>
+    <span class="vertical-line"></span>
+    <p id="p1"> "Devouring Time, and you, Jealous Age, consume everything, and slowly gnawing at them, with your teeth, little by little, consign all things to eternal death!"</p>
+    <p id="p2"> "Tempus edax rerum, tuque invidioſa vetuſtas, Omnia deſtruitis: vitiataque dentibus ævi Paulatim lenta conſumitis omnia morte!"</p>
+    <span class="vertical-line"></span>
+    <div class="button-container">
+      <button onclick="doSumm()" id="myButton">stop it</button>
+    </div>
+    
+    <div class="flex-container">
+      <p id="buttonText"></p>
+</div>
+
+<script> 
+          function doSumm(){
+            document.getElementById("buttonText").innerHTML = "Remember, then, that if you suppose that things which are slavish by nature are also free, and that what belongs to others is your own, then you will be hindered. You will lament, you will be disturbed, and you will find fault both with gods and men. But if you suppose that only to be your own which is your own, and what belongs to others such as it really is, then no one will ever compel you or restrain you. Further, you will find fault with no one or accuse no one. You will do nothing against your will. No one will hurt you, you will have no enemies, and you not be harmed. "
+
+          }
+</script>
+  </body>
+
+<script>
+var countDownDate = new Date("Dec 31, 2026 24:59:59").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  // 1. Calculate the raw numbers
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  var milliseconds = Math.floor(distance % 1000);
+
+  // 2. Pad the numbers with zeros 
+  var h = String(hours).padStart(2, '0');
+  var m = String(minutes).padStart(2, '0');
+  var s = String(seconds).padStart(2, '0');
+  var ms = String(milliseconds).padStart(3, '0'); // Forces 3 digits
+
+  // 3. Display the result using the NEW padded variables (h, m, s, ms)
+  document.getElementById("demo").innerHTML = days + " " + h + " "
+  + m + " " + s + " " + ms + " ";
+  
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Oh no! Something really bad is happening.";
+  }
+}, 4);
+</script>

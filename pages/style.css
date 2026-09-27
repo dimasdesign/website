@@ -1,0 +1,100 @@
+@font-face {
+    src: url(../fonts/MomsTypewriter.woff2);
+    font-family: Mom;
+}
+
+body {
+    background-color: #000000;
+     border: 2px solid #ACC7B4;
+}       
+
+#title {
+    font-size: 70px;
+    text-align: center;
+    color: #ACC7B4;
+    font-family: Mom;
+}
+
+#p1 {
+    font-size: 16px;
+    font-family: DaisyWheel;
+    text-align: center;
+    color: #ACC7B4;
+}
+
+#p2 {
+    font-size: 16px;
+    font-family: Times New Roman;
+    font-style: italic;
+    text-align: center;
+    color: #ACC7B4;
+}
+
+#demo {
+    font-size: 100px;
+    text-align: center;
+    color: #ACC7B4;
+    font-family: "DaisyWheel";
+    font-variant-numeric: tabular-nums;
+    border: 5px solid #ACC7B4;
+    cursor: wait;
+    margin-bottom: 0px;
+}
+
+#myButton {
+    font-size: 40px;
+    text-align: center;
+    color: #ACC7B4;
+    font-family: Mom;
+    background-color: #000000;
+    border: 2px solid #ACC7B4;
+    padding: 5px 10px;
+    cursor: help;
+    border-radius: 50px;
+}
+
+#myButton:hover {
+    background-color: #ACC7B4;
+    color: #000000;
+}
+
+#buttonText {
+    font-size: 16px;
+    text-align: center;
+    color: #ACC7B4;
+    font-family: DaisyWheel;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 00px;
+    margin-bottom: 0px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.vertical-line {
+    border-left: 2px solid #ACC7B4;
+    display: block;
+    height: 100px;
+    margin: 0 auto;
+    width: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  border: 20px solid #ACC7B4;
+  pointer-events: none;
+  z-index: 9999;
+}
