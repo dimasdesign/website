@@ -1,5 +1,5 @@
 @font-face {
-    src: url(../fonts/MomsTypewriter.woff2);
+    src: url(../fonts/MomsTypewriter.woff2) format("woff2");
     font-family: Mom;
 }
 
